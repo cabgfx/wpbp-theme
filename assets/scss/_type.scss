@@ -1,0 +1,4 @@
+*:not(form):not(:input) {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}

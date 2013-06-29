@@ -1,0 +1,35 @@
+/* Placeholders for WordPress posts & pages content  */
+.hentry {
+  blockquote {
+    &, p {}
+  }
+  
+  > * {margin-bottom: $baseLineHeight;}
+  
+  h2, h3, h4, h5, h6 {margin: 0 0 $baseLineHeight;}
+  ul, ol {
+   > li + li  {margin-top: .5em;}
+  }
+  
+  /*
+    WordPress images without captio.
+    Specificity needed to avoid the emoticons WordPress generates (.wp-smiley)
+  */
+  img[class*="wp-image"] {}
+  
+  /* WordPress images with captions */
+  .wp-caption {
+    & {}
+    img {}
+    figcaption {}
+  }
+
+  /*
+  WordPress Generated Classes
+  See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+  */
+  .aligncenter { display: block; margin: 0 auto; }
+  .alignleft { float: left; }
+  .alignright { float: right; }
+  figure.alignnone { margin-left: 0; margin-right: 0; }
+}

@@ -1,0 +1,11 @@
+.DS_Store
+.sass-cache
+*.php
+
+assets/*
+!assets/scss
+
+doc/*
+lang/*
+lib/*
+!lib/scripts.php

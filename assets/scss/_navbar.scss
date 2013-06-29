@@ -1,0 +1,60 @@
+/*
+  Extension of Bootstrap's default .brand element.
+  See /templates/header-top-navbar.php for more.
+ */
+.logo {
+  $width: 100px;
+  $height: 30px;
+  
+  & {
+    @extend .brand; /* Todo: see if this is really needed for positioning */
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  > a {
+    @include retina('logo', $width, $height);
+    color: #fff; // Match this to your logo, to keep the link visible when images are off.
+
+    /* Image replacement */
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+
+    display: block;
+    width: $width;
+    height: $height;
+  }
+}
+
+.nav-main {
+  /* Default to right alignment of main links in navbar */
+  @media (min-width: 980px) { .navbar {float: right;} }
+
+  /* Navbar links */
+  .nav {
+    > li > a {
+      & {}
+      &:focus, &:hover {}
+    }
+    > .active > a {
+      &, &:focus, &:hover {}
+    }
+  }
+}
+
+/* Remove default shadows */
+.nav-main a {@include box-shadow(none !important); text-shadow: none !important;}
+.navbar, .navbar-inner, .navbar-fixed-top {
+  @include box-shadow(none !important);
+}
+
+/* Dropdowns */
+.caret {
+  .navbar .nav li.dropdown > .dropdown-toggle & {}
+  .navbar .nav li.dropdown > .dropdown-toggle:hover & {}
+}
+
+/* Hamburger button on narrow viewports */
+.btn-navbar {}
+.navbar .btn-navbar .icon-bar {}

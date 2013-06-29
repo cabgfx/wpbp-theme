@@ -1,0 +1,21 @@
+@import "variables";
+@import "mixins";
+
+@import "vendor/bootstrap/bootstrap";
+
+// Uncomment the next line if your theme is responsive with fixed navbar(s).
+// body {padding-top: $navbarHeight;}
+
+// Include Bootstrap responsive styles, after any fixed navbar adjustments.
+@import "vendor/bootstrap/responsive";
+
+@import "chrome";
+@import "type";
+@import "icons";
+@import "elements";
+@import "buttons";
+@import "navbar";
+@import "footer";
+
+@import "content-pages";
+@import "widgets";
