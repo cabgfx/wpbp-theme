@@ -1,21 +1,22 @@
+// Override default Bootstrap variables + include additional mixins in separate files,
+// leaving the actual BS files pristine and update-friendly.
+// -----------------------------------------------------------------
+
 @import "variables";
 @import "mixins";
+@import "bootstrap";
 
-@import "vendor/bootstrap/bootstrap";
-
-// Uncomment the next line if your theme is responsive with fixed navbar(s).
-// body {padding-top: $navbarHeight;}
-
-// Include Bootstrap responsive styles, after any fixed navbar adjustments.
-@import "vendor/bootstrap/responsive";
-
-@import "chrome";
 @import "type";
 @import "icons";
-@import "elements";
-@import "buttons";
-@import "navbar";
-@import "footer";
 
-@import "content-pages";
+@import "global";
+@import "wordpress";
+
+@import "header";
+@import "footer";
+@import "nav";
 @import "widgets";
+
+@import "posts";
+@import "comments";
+@import "frontpage";
