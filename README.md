@@ -1,12 +1,11 @@
 # WPBP Theme
-==========
 
 Bare-bones theme configuration using SCSS for [Roots](http://roots.io/), a WordPress starter theme based on [HTML5 Boilerplate](http://html5boilerplate.com/) & [Bootstrap](http://getbootstrap.com/) that will help you make better themes.
 
 ## Deviations from default Roots theme:
 
 ### Workflow
-* No Gruntfile. Grunt is awesome, but I prefer to start off simple(r). Minification and concatenation <are|can be> handled by the Sass compiler and the [W3 Total Cache](https://wordpress.org/plugins/w3-total-cache/) plugin. No automatic JS validation, but you can still do it manually at [jshint.com](http://www.jshint.com/).
+* No Gruntfile. Grunt is awesome, but I prefer to start off simple(r). Minification and concatenation can be handled by the Sass compiler and the [W3 Total Cache](https://wordpress.org/plugins/w3-total-cache/) plugin. No automatic JS validation, but you can still do it manually at [jshint.com](http://www.jshint.com/).
 
 ### Assets
 * SCSS structure/organization - a boilerplate file structure, expecting certain styles to go in certain files. Also includes a few default styles, such as legibility optimizations and an alternative `@mixin` for Retina/HiDPI background images.
