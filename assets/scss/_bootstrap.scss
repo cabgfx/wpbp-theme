@@ -1,50 +1,38 @@
-// Core variables and mixins
+@import "vendor/bootstrap/functions";
 @import "vendor/bootstrap/variables";
 @import "vendor/bootstrap/mixins";
+@import "vendor/bootstrap/root";
+@import "vendor/bootstrap/reboot";
 
-// Reset and dependencies
-@import "vendor/bootstrap/normalize";
-@import "vendor/bootstrap/print";
-/*@import "vendor/bootstrap/glyphicons";*/
-
-// Core CSS
-@import "vendor/bootstrap/scaffolding";
 @import "vendor/bootstrap/type";
-/*@import "vendor/bootstrap/code";*/
+@import "vendor/bootstrap/images";
+// @import "vendor/bootstrap/code";
 @import "vendor/bootstrap/grid";
-@import "vendor/bootstrap/tables";
+// @import "vendor/bootstrap/tables";
 @import "vendor/bootstrap/forms";
 @import "vendor/bootstrap/buttons";
+// @import "vendor/bootstrap/transitions";
+// @import "vendor/bootstrap/dropdown";
+// @import "vendor/bootstrap/button-group";
+// @import "vendor/bootstrap/input-group";
+// @import "vendor/bootstrap/custom-forms";
 
-// Components
-@import "vendor/bootstrap/component-animations";
-/*@import "vendor/bootstrap/dropdowns";*/
-@import "vendor/bootstrap/button-groups";
-/*@import "vendor/bootstrap/input-groups";*/
-@import "vendor/bootstrap/navs";
+@import "vendor/bootstrap/nav";
 @import "vendor/bootstrap/navbar";
-/*@import "vendor/bootstrap/breadcrumbs";*/
-@import "vendor/bootstrap/pagination";
-@import "vendor/bootstrap/pager";
-/*@import "vendor/bootstrap/labels";
-@import "vendor/bootstrap/badges";
-@import "vendor/bootstrap/jumbotron";
-@import "vendor/bootstrap/thumbnails";
-@import "vendor/bootstrap/alerts";
-@import "vendor/bootstrap/progress-bars";*/
-@import "vendor/bootstrap/media";
-/*@import "vendor/bootstrap/list-group";
-@import "vendor/bootstrap/panels";*/
-@import "vendor/bootstrap/responsive-embed";
-/*@import "vendor/bootstrap/wells";
-@import "vendor/bootstrap/close";*/
 
-// Components w/ JavaScript
-/*@import "vendor/bootstrap/modals";
-@import "vendor/bootstrap/tooltip";
-@import "vendor/bootstrap/popovers";
-@import "vendor/bootstrap/carousel";*/
-
-// Utility classes
+@import "vendor/bootstrap/card";
+// @import "vendor/bootstrap/breadcrumb";
+// @import "vendor/bootstrap/pagination";
+// @import "vendor/bootstrap/badge";
+// @import "vendor/bootstrap/jumbotron";
+// @import "vendor/bootstrap/alert";
+// @import "vendor/bootstrap/progress";
+// @import "vendor/bootstrap/media";
+// @import "vendor/bootstrap/list-group";
+// @import "vendor/bootstrap/close";
+// @import "vendor/bootstrap/modal";
+// @import "vendor/bootstrap/tooltip";
+// @import "vendor/bootstrap/popover";
+// @import "vendor/bootstrap/carousel";
 @import "vendor/bootstrap/utilities";
-@import "vendor/bootstrap/responsive-utilities";
+@import "vendor/bootstrap/print";
