@@ -6,17 +6,6 @@
 @import "mixins";
 @import "bootstrap";
 
-@import "type";
-@import "icons";
-
-@import "global";
-@import "wordpress";
-
-@import "header";
-@import "footer";
-@import "nav";
-@import "widgets";
-
-@import "posts";
-@import "comments";
-@import "frontpage";
+@import "chrome/chrome";
+@import "content/content";
+@import "modules/modules";

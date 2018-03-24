@@ -2,6 +2,8 @@
 
 Bare-bones theme configuration using SCSS for [Roots](http://roots.io/), a WordPress starter theme based on [HTML5 Boilerplate](http://html5boilerplate.com/) & [Bootstrap](http://getbootstrap.com/) that will help you make better themes.
 
+(Note: This theme was originally forked from a much earlier version of Roots, and does not compare to the current version of Roots.)
+
 ## Deviations from default Roots theme:
 
 ### Workflow
