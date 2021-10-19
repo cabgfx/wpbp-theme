@@ -1,1 +1,10 @@
 /* Override Bootstrap variables (vendor/bootstrap/_variables.scss) here  */
+$spacer: 1rem;
+$spacers: (
+  6: ($spacer * 10),
+  7: ($spacer * 12.5),
+  8: ($spacer * 15),
+  9: ($spacer * 17.5),
+  10: ($spacer * 20),
+  11: ($spacer * 25)
+);

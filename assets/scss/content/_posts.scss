@@ -1,5 +1,7 @@
-.hentry header { }
-.hentry time { }
-.hentry .byline { }
-.hentry .entry-content { }
-.hentry footer { }
+.entry-content {
+  > * {
+    margin-bottom: $spacer;
+  }
+
+  img {@extend .img-fluid;}
+}

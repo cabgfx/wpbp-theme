@@ -19,7 +19,11 @@ function roots_setup() {
   // Add post formats (http://codex.wordpress.org/Post_Formats)
   // add_theme_support('post-formats', array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat'));
 
-  // Tell the TinyMCE editor to use a custom stylesheet
-  add_editor_style('/assets/css/editor-style.css');
+  add_theme_support( 'title-tag' );
+  add_theme_support( 'automatic-feed-links' );
+  add_theme_support( 'html5' );
+  add_theme_support( 'align-wide' );
+
 }
 add_action('after_setup_theme', 'roots_setup');
+
