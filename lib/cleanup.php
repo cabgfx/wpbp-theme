@@ -9,7 +9,7 @@
  */
 function roots_head_cleanup() {
   // Originally from http://wpengineer.com/1438/wordpress-header/
-  remove_action('wp_head', 'feed_links', 2);
+  // remove_action('wp_head', 'feed_links', 2);
   remove_action('wp_head', 'feed_links_extra', 3);
   remove_action('wp_head', 'rsd_link');
   remove_action('wp_head', 'wlwmanifest_link');
