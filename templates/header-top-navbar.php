@@ -1,21 +1,28 @@
-<header class="banner navbar navbar-default navbar-static-top" role="banner">
+<header class="navbar navbar-light navbar-expand-lg">
   <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a>
-    </div>
 
-    <nav class="collapse navbar-collapse" role="navigation">
-      <?php
-        if (has_nav_menu('primary_navigation')) :
-          wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav'));
-        endif;
-      ?>
-    </nav>
+    <a class="navbar-brand" href="<?php echo home_url(); ?>/">
+      <?php bloginfo('name'); ?>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#wpbp-topnavbar" aria-controls="wpbp-topnavbar" aria-expanded="false" aria-label="<?php _e('Toggle navigation', 'roots'); ?>">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <?php
+      if (has_nav_menu('primary_navigation')) :
+        wp_nav_menu(array(
+          'depth' => 2,
+          'container'       => 'nav',
+          'container_class' => 'collapse navbar-collapse',
+          'container_id'    => 'wpbp-topnavbar',
+          'menu_class'      => 'navbar-nav align-items-center',
+          'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+          'theme_location' => 'primary_navigation',
+          'walker' => new WP_Bootstrap_Navwalker()
+        ));
+      endif;
+    ?>
+
   </div>
 </header>
