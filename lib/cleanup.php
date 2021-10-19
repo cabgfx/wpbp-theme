@@ -181,27 +181,6 @@ function roots_remove_default_description($bloginfo) {
 add_filter('get_bloginfo_rss', 'roots_remove_default_description');
 
 /**
- * Redirects search results from /?s=query to /search/query/, converts %20 to +
- *
- * @link http://txfx.net/wordpress-plugins/nice-search/
- */
-function roots_nice_search_redirect() {
-  global $wp_rewrite;
-  if (!isset($wp_rewrite) || !is_object($wp_rewrite) || !$wp_rewrite->using_permalinks()) {
-    return;
-  }
-
-  $search_base = $wp_rewrite->search_base;
-  if (is_search() && !is_admin() && strpos($_SERVER['REQUEST_URI'], "/{$search_base}/") === false) {
-    wp_redirect(home_url("/{$search_base}/" . urlencode(get_query_var('s'))));
-    exit();
-  }
-}
-if (current_theme_supports('nice-search')) {
-  add_action('template_redirect', 'roots_nice_search_redirect');
-}
-
-/**
  * Fix for empty search queries redirecting to home page
  *
  * @link http://wordpress.org/support/topic/blank-search-sends-you-to-the-homepage#post-1772565
