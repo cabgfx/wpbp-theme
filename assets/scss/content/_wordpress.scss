@@ -2,7 +2,7 @@
   WordPress images without caption.
   Specificity needed to avoid targting WP emoticons (.wp-smiley)
 */
-img[class*="wp-image"] {}
+// img[class*="wp-image"] {}
 
 /* WordPress images with captions */
 .wp-caption {
@@ -15,7 +15,45 @@ img[class*="wp-image"] {}
 WordPress Generated Classes
 See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
 */
+[class*="wp-image"] {max-width: 100%; height: auto;}
+
 .aligncenter { display: block; margin: 0 auto; }
 .alignleft { float: left; }
 .alignright { float: right; }
+
+.alignfull {
+	margin: {
+    left: calc(50% - 50vw);
+    right: calc(50% - 50vw);
+  }
+	max-width: 100vw;
+	width: 100vw;
+}
+
+figure.aligncenter {text-align: center;}
 figure.alignnone { margin-left: 0; margin-right: 0; }
+
+/*
+  Fix comments_popup_link()
+  https://make.wordpress.org/core/2015/03/31/screen-reader-text-in-output-of-comments_popup_link/
+*/
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.has-text-align-center {text-align: center;}
+
+// Add .no-gutters to a block's extra css classes, to achieve columns without gaps.
+// https://getbootstrap.com/docs/4.6/layout/grid/#no-gutters
+.wp-block-columns {@extend .row;}
+.wp-block-column {
+  @extend .col;
+
+  &.is-vertically-aligned-bottom {
+    align-self: flex-end;
+  }
+}

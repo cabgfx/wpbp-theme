@@ -205,4 +205,16 @@ function roots_get_search_form($form) {
 }
 add_filter('get_search_form', 'roots_get_search_form');
 
+/**
+ * Remove default Gutenberg stylesheets.
+ *
+ * @link https://smartwp.com/remove-gutenberg-css/
+ *
+ */
+function roots_remove_gutenberg_frontend_styles() {
+  wp_dequeue_style( 'wp-block-library' );
+  wp_dequeue_style( 'wp-block-library-theme');
+}
+add_action( 'wp_enqueue_scripts', 'roots_remove_gutenberg_frontend_styles', 100 );
+
 add_filter('show_recent_comments_widget_style', '__return_false');
