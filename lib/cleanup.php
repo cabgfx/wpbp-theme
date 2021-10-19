@@ -6,6 +6,8 @@
  * Remove inline CSS used by Recent Comments widget
  * Remove inline CSS used by posts with galleries
  * Remove self-closing tag and change ''s to "'s on rel_canonical()
+ *
+ * Soil: https://github.com/roots/soil/blob/main/src/Modules/CleanUpModule.php
  */
 function roots_head_cleanup() {
   // Originally from http://wpengineer.com/1438/wordpress-header/
@@ -13,9 +15,12 @@ function roots_head_cleanup() {
   remove_action('wp_head', 'feed_links_extra', 3);
   remove_action('wp_head', 'rsd_link');
   remove_action('wp_head', 'wlwmanifest_link');
-  remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+  remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10);
+  remove_action('wp_head', 'wp_shortlink_wp_head', 10);
+  remove_action('wp_head', 'rest_output_link_wp_head', 10);
+  // remove_action('wp_head', 'wp_oembed_add_discovery_links');
+  // remove_action('wp_head', 'wp_oembed_add_host_js');
   remove_action('wp_head', 'wp_generator');
-  remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 
   global $wp_widget_factory;
   remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
@@ -131,45 +136,6 @@ function roots_embed_wrap($cache, $url, $attr = '', $post_ID = '') {
 add_filter('embed_oembed_html', 'roots_embed_wrap', 10, 4);
 
 /**
- * Add Bootstrap thumbnail styling to images with captions
- * Use <figure> and <figcaption>
- *
- * @link http://justintadlock.com/archives/2011/07/01/captions-in-wordpress
- */
-function roots_caption($output, $attr, $content) {
-  if (is_feed()) {
-    return $output;
-  }
-
-  $defaults = array(
-    'id'      => '',
-    'align'   => 'alignnone',
-    'width'   => '',
-    'caption' => ''
-  );
-
-  $attr = shortcode_atts($defaults, $attr);
-
-  // If the width is less than 1 or there is no caption, return the content wrapped between the [caption] tags
-  if ($attr['width'] < 1 || empty($attr['caption'])) {
-    return $content;
-  }
-
-  // Set up the attributes for the caption <figure>
-  $attributes  = (!empty($attr['id']) ? ' id="' . esc_attr($attr['id']) . '"' : '' );
-  $attributes .= ' class="thumbnail wp-caption ' . esc_attr($attr['align']) . '"';
-  $attributes .= ' style="width: ' . (esc_attr($attr['width']) + 10) . 'px"';
-
-  $output  = '<figure' . $attributes .'>';
-  $output .= do_shortcode($content);
-  $output .= '<figcaption class="caption wp-caption-text">' . $attr['caption'] . '</figcaption>';
-  $output .= '</figure>';
-
-  return $output;
-}
-add_filter('img_caption_shortcode', 'roots_caption', 10, 3);
-
-/**
  * Remove unnecessary dashboard widgets
  *
  * @link http://www.deluxeblogtips.com/2011/01/remove-dashboard-widgets-in-wordpress.html
@@ -259,3 +225,5 @@ function roots_get_search_form($form) {
   return $form;
 }
 add_filter('get_search_form', 'roots_get_search_form');
+
+add_filter('show_recent_comments_widget_style', '__return_false');
