@@ -21,5 +21,9 @@ function roots_setup() {
 
   add_theme_support( 'title-tag' );
   add_theme_support( 'automatic-feed-links' );
+  add_theme_support( 'html5' );
+  add_theme_support( 'align-wide' );
+
 }
 add_action('after_setup_theme', 'roots_setup');
+
