@@ -57,3 +57,11 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
     align-self: flex-end;
   }
 }
+
+.wp-block-embed__wrapper {
+  position: relative;
+}
+
+.wp-block-embed iframe {
+  max-width: 100%;
+}

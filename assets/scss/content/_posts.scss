@@ -5,3 +5,9 @@
 
   img {@extend .img-fluid;}
 }
+
+/* oEmbeds */
+.entry-content-asset {
+  margin: $spacer auto;
+  text-align: center;
+}
