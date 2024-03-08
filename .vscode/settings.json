@@ -1,12 +1,12 @@
 {
   "liveSassCompile.settings.formats": [
     {
-      "format": "compact",
+      "format": "expanded",
       "extensionName": ".css",
-      "savePath": "~/../css/"
+      "savePath": "~/../css"
     }
   ],
   "liveSassCompile.settings.includeItems": [
-    "assets/scss/theme.scss"
+    "/wp-content/themes/YOUR-THEME-FOLDER-NAME-HERE/assets/scss/theme.scss"
   ]
 }
